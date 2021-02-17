@@ -8,19 +8,19 @@ interface SutTypes {
   emailValidatorStub: EmailValidator
 }
 
-describe('SignUpController', () => {
-  const makeSut = (): SutTypes => {
-    class EmailValidatorStub implements EmailValidator {
-      isValid (email: string): boolean {
-        return true
-      }
+const makeSut = (): SutTypes => {
+  class EmailValidatorStub implements EmailValidator {
+    isValid (email: string): boolean {
+      return true
     }
-
-    const emailValidatorStub = new EmailValidatorStub()
-    const sut = new SignUpController(emailValidatorStub)
-    return { sut, emailValidatorStub }
   }
 
+  const emailValidatorStub = new EmailValidatorStub()
+  const sut = new SignUpController(emailValidatorStub)
+  return { sut, emailValidatorStub }
+}
+
+describe('SignUpController', () => {
   test('Should return statusCode 400 if no name is provided', () => {
     const { sut } = makeSut()
     const httpRequest = {
