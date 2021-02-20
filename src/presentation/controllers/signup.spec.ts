@@ -1,3 +1,5 @@
+import { AccountModel } from '../../domain/entities'
+import { AddAccount, AddAccountModel } from '../../domain/usecases'
 import { InternalServerError, InvalidParamError, MissingParamError } from '../errors'
 import { EmailValidator } from '../protocols'
 import { SignUpController } from './signup'
@@ -5,6 +7,7 @@ import { SignUpController } from './signup'
 interface SutTypes {
   sut: SignUpController
   emailValidatorStub: EmailValidator
+  addAccountStub: AddAccount
 }
 
 const makeEmailValidator = (): EmailValidator => {
@@ -19,10 +22,28 @@ const makeEmailValidator = (): EmailValidator => {
   return emailValidatorStub
 }
 
+const makeAddAccount = (): AddAccount => {
+  class AddAccountStub implements AddAccount {
+    add (account: AddAccountModel): AccountModel {
+      return {
+        id: 1,
+        name: 'any_name',
+        email: 'any_email@email.com',
+        password: 'any_password'
+      }
+    }
+  }
+
+  const addAccountStub = new AddAccountStub()
+
+  return addAccountStub
+}
+
 const makeSut = (): SutTypes => {
   const emailValidatorStub = makeEmailValidator()
-  const sut = new SignUpController(emailValidatorStub)
-  return { sut, emailValidatorStub }
+  const addAccountStub = makeAddAccount()
+  const sut = new SignUpController(emailValidatorStub, addAccountStub)
+  return { sut, emailValidatorStub, addAccountStub }
 }
 
 describe('SignUpController', () => {
@@ -159,5 +180,25 @@ describe('SignUpController', () => {
 
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new InvalidParamError('passwordConfirmation'))
+  })
+
+  test('Should call addAccount with correct values', () => {
+    const { sut, addAccountStub } = makeSut()
+    const addSpy = jest.spyOn(addAccountStub, 'add')
+    const httpRequest = {
+      body: {
+        name: 'any_name',
+        email: 'any_email@email.com',
+        password: 'any_password',
+        passwordConfirmation: 'any_password'
+      }
+    }
+
+    sut.handle(httpRequest)
+    expect(addSpy).toHaveBeenCalledWith({
+      name: 'any_name',
+      email: 'any_email@email.com',
+      password: 'any_password'
+    })
   })
 })
