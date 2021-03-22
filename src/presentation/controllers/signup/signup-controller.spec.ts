@@ -1,7 +1,7 @@
-import { MissingParamError } from "../../errors";
-import { ok, badRequest } from "../../helpers/http/http-helper";
-import { SignUpController } from "./signup-controller";
-import { AddAccount, AddAccountModel, AccountModel, Validation, HttpRequest } from "./signup-controller-protocols";
+import { MissingParamError } from '../../errors'
+import { ok, badRequest } from '../../helpers/http/http-helper'
+import { SignUpController } from './signup-controller'
+import { AddAccount, AddAccountModel, AccountModel, Validation, HttpRequest } from './signup-controller-protocols'
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
@@ -29,7 +29,7 @@ const makeValidation = (): Validation => {
 
 interface SutTypes {
   sut: SignUpController
-  addAccountStub: AddAccount,
+  addAccountStub: AddAccount
   validationStub: Validation
 }
 
@@ -45,7 +45,7 @@ const makeFakeRequest = (): HttpRequest => ({
     name: 'any_name',
     email: 'any_email@email.com',
     password: 'any_password',
-    passwordConfirmation: 'any_password',
+    passwordConfirmation: 'any_password'
   }
 })
 
