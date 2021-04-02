@@ -1,6 +1,6 @@
-export class EmailInUseError extends Error {
+export class AccessDeniedError extends Error {
   constructor () {
-    super('The recived email is already in use')
-    this.name = 'EmailInUseError'
+    super('Access denied')
+    this.name = 'AccessDeniedError'
   }
 }
