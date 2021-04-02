@@ -1,23 +1,5 @@
-[![Build Status](https://travis-ci.org/georgejr3211/clean-architecture-ts-api.svg?branch=master)](https://travis-ci.org/georgejr3211/clean-architecture-ts-api)
-[![Coverage Status](https://coveralls.io/repos/github/georgejr3211/clean-architecture-ts-api/badge.svg)](https://coveralls.io/github/georgejr3211/clean-architecture-ts-api)
-[![Known Vulnerabilities](https://snyk.io/test/github/georgejr3211/clean-architecture-ts-api/badge.svg)](https://snyk.io/test/github/georgejr3211/clean-architecture-ts-api)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
-[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
-
-# **Clean Node API**
-
-[![alt text](./public/img/logo-course.png "Link para o treinamento")](https://www.udemy.com/course/tdd-com-mango/?referralCode=B53CE5CA2B9AFA5A6FA1)
-
----
-
-## [**Link para o curso completo**](https://www.udemy.com/course/tdd-com-mango/?referralCode=B53CE5CA2B9AFA5A6FA1)
-
-Essa API faz parte do treinamento do professor Rodrigo Manguinho (Mango) na Udemy.
-
-O objetivo do treinamento é mostrar como criar uma API com uma arquitetura bem definida e desacoplada, utilizando TDD (programação orientada a testes) como metodologia de trabalho, Clean Architecture para fazer a distribuição de responsabilidades em camadas, sempre seguindo os princípios do SOLID e, sempre que possível, aplicando Design Patterns para resolver alguns problemas comuns.
-
-## [**Link para a documentação da API**](http://fordevs.herokuapp.com/api-docs)
+[![Build Status](https://travis-ci.com/georgejr3211/clean-architecture-ts-api.svg?branch=main)](https://travis-ci.com/georgejr3211/clean-architecture-ts-api)
+[![Coverage Status](https://coveralls.io/repos/github/georgejr3211/clean-architecture-ts-api/badge.svg?branch=main)](https://coveralls.io/github/georgejr3211/clean-architecture-ts-api?branch=main)
 
 > ## APIs construídas no treinamento
 
