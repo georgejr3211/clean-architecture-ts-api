@@ -1,3 +1,3 @@
-export * from '../../../protocols'
-export * from '../../../../domain/usecases/load-surveys'
-export * from '../../../../domain/entities/survey'
+export * from '@/presentation/protocols'
+export * from '@/domain/usecases/load-surveys'
+export * from '@/domain/entities/survey'

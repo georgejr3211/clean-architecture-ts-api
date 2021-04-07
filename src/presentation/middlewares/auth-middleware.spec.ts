@@ -1,9 +1,9 @@
-import { AccessDeniedError } from '../errors'
-import { forbidden, internalServerError, ok } from '../helpers/http/http-helper'
-import { HttpRequest } from '../protocols'
+import { AccessDeniedError } from '@/presentation/errors'
+import { forbidden, internalServerError, ok } from '@/presentation/helpers/http/http-helper'
+import { HttpRequest } from '@/presentation/protocols'
 import { AuthMiddleware } from './auth-middleware'
-import { AccountModel } from '../../domain/entities/account'
-import { LoadAccountByToken } from '../../domain/usecases'
+import { AccountModel } from '@/domain/entities/account'
+import { LoadAccountByToken } from '@/domain/usecases'
 
 const makeFakeRequest = (): HttpRequest => ({
   headers: {
