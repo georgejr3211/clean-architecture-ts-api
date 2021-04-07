@@ -1,7 +1,6 @@
-import { Hasher } from '../../protocols/criptography/hasher'
 import { AddAccountRepository } from '../../protocols/db/account/add-account-repository'
 import { DbAddAccount } from './db-add-account'
-import { AddAccountModel, AccountModel, LoadAccountByEmailRepository } from './db-add-account-protocols'
+import { Hasher, AddAccountModel, AccountModel, LoadAccountByEmailRepository } from './db-add-account-protocols'
 
 interface SutTypes {
   sut: DbAddAccount
